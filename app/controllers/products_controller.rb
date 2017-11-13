@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
+  include UsersHelper
   before_action :set_product, only: [:show, :update]
   before_action :authenticate_user!, only: [:update, :new]
+  before_action :user_is_admin?, only: [:new]
 
   def index
     @products = Product.all
