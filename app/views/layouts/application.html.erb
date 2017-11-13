@@ -11,11 +11,15 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-4">
           <h1><%= link_to "My Store", root_path %></h1>
         </div>
-        <div class="col-xs-6 text-right">
+        <div class="col-4 text-right">
           <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+        </div>
+        <div class="col-4">
+          <h3><%= link_to 'Login', new_user_session_path %></h3>
+          <h3><%= link_to 'Register', new_user_registration_path %></h3>
         </div>
       </div>
       <hr>
