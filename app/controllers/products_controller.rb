@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :update]
 
   def index
     @products = Product.all
@@ -8,6 +8,20 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+  end
+
+  def update
+    if @product.update(product_params)
+      respond_to do |format|
+        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.json { render :show, status: :created, location: @product }
+      end
+    else
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def create
