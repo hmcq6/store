@@ -4,13 +4,13 @@
   <div class="row">
     <div class="form-group col-sm">
       <%= f.label :name, class: 'col-sm-3' %>
-      <%= f.text_field :name, class: 'form-input col-sm-9' %>
+      <%= f.text_field :name, class: 'form-input col-sm-9', disabled: 'disabled' %>
     </div>
   </div>
   <div class="row">
     <div class="form-group col-sm">
       <%= f.label :price, class: 'col-sm-3' %>
-      <%= f.text_field :price, class: 'col-sm-9' %>
+      <%= f.text_field :price, class: 'col-sm-9', disabled: 'disabled' %>
     </div>
   </div>
   <div class="row">
@@ -21,7 +21,7 @@
   </div>
   <div class="row">
     <div class="form-group">
-      <%= f.submit 'Add Product', class: 'btn btn-primary' %>
+      <%= f.submit 'Update Product', class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>
