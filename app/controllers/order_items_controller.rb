@@ -1,7 +1,15 @@
 class OrderItemsController < ApplicationController
   def create
     @order = current_order
-    @order_item = @order.order_items.new(order_item_params)
+    @order_item = @order.order_items.find_by(product_id: order_item_params['product_id'])
+    if @order_item.nil?
+      @order_item = @order.order_items.new(order_item_params)
+    else
+      update_params = order_item_params
+      update_params['quantity'] = update_params['quantity'].to_i
+      update_params['quantity'] += @order_item.quantity.to_i
+      @order_item.update(update_params)
+    end
     @order.save
     session[:order_id] = @order.id
   end
