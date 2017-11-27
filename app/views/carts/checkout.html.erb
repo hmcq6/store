@@ -1,0 +1,19 @@
+<div class="shipping-address">
+  <%= render 'address_form', type: :shipping %>
+</div>
+<hr />
+<div class="billing-address">
+  <%= render 'address_form', type: :billing %>
+</div>
+<hr />
+<div class="cart-list">
+  <% @order_items.each do |order_item| %>
+    <%= render 'carts/item_row', order_item: order_item, product: order_item.product %>
+  <% end %>
+</div>
+
+<div class="text-right">
+  <button type="submit" class="btn btn-primary">
+    Place Order
+  </button>
+</div>

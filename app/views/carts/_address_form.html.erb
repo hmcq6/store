@@ -1,0 +1,41 @@
+<div class="row">
+  <h3 class="col-12 capitalize">
+    <%= type %> Address
+    <%= icon 'minus', class: 'pull-right', data: { toggle: 'collapse', target: "##{type}_address_form" } %>
+  </h3>
+</div>
+
+<div class="collapse" id="<%= type %>_address_form">
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">Full Name:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">Address Line 1:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">Address Line 2:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">City:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">State:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">ZIP:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">Country:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+  <div class="form-group">
+    <label class="col-4 text-right d-inline-block">Phone number:</label>
+    <input type="text" class="form-control col-7 d-inline-block" />
+  </div>
+</div>
